@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" style="background-color: #303030; color: #FFFFFF; font-family: Arial, sans-serif; font-size: 25px">
     <div class="content">
         <div class="columns">
             <div class="px-6 column is-half">

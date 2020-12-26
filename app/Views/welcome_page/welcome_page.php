@@ -8,22 +8,59 @@
 <?= $this->section('content') ?>
 <?= $this->include('welcome_page/_hero') ?>
 <section class="section">
-    <h1 class="has-text-centered title">Services we provide!</h1>
     <div class="columns has-text-centered">
-        <div class="column is-one-third">
-            <?= img(['src' => base_url('/assets/img/background.webp'), 'class' => 'circle-image']) ?>
-            <br>
-            <label>Extract of Coal</label>
-        </div>
-        <div class="column is-one-third">
-            <?= img(['src' => base_url('/assets/img/background.webp'), 'class' => 'circle-image']) ?>
-            <br>
-            <label>Processing of Coal</label>
-        </div>
-        <div class="column is-one-third">
-            <?= img(['src' => base_url('/assets/img/background.webp'), 'class' => 'circle-image']) ?>
-            <br>
-            <label>Renting of vehicle and tools</label>
+        <div id="books-display" class='flow-layout'>
+            <div class="flow-child">
+                <div class="card mx-3">
+                    <div class="card-image my-1" >
+                      <figure class="image">
+                          <img src="/assets/img/ml.jpg" alt="Placeholder image" style="width:100%;height: 256px">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">O'reilley</p>
+                          <p class="subtitle is-6">@orielly</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-child">
+                <div class="card mx-3">
+                    <div class="card-image my-1">
+                      <figure class="image">
+                          <img src="/assets/img/arthashastra.png" alt="Placeholder image" style="width:100%;height: 256px">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media"> 
+                        <div class="media-content">
+                          <p class="title is-4">R Samastry</p>
+                          <p class="subtitle is-6">@rsamstry</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-child">
+                <div class="card mx-3">
+                    <div class="card-image my-1">
+                      <figure class="image">
+                          <img src="/assets/img/arthashastra.png" alt="Placeholder image" style="width:100%;height: 256px">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media"> 
+                        <div class="media-content">
+                          <p class="title is-4">R Samastry</p>
+                          <p class="subtitle is-6">@rsamstry</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

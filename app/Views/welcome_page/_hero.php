@@ -1,12 +1,18 @@
-<section class="hero is-large is-bold is-dark" style="background: url('<?= base_url('/assets/img/background.webp') ?>') no-repeat center center; background-size: cover;">
-  <div class="hero-body">
-    <div class="container">
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container has-text-centered">
         <h1 class="title">
-          Coal extraction and processing
+            <img src="/assets/img/pstk_logo.svg" style="width: auto; height: 20rem;" alt=""><br>
+          <img src="img/logo-text-light.svg" style="width: auto; height: 3rem;" alt=""><br>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input class="input is-rounded" type="search" placeholder="Find your book" name="Search" autofocus="autofocus" onfocus="this.select()" required="">
+            </div>
+            <div class="control">
+              <button class="button is-link is-rounded search-button-icon">Search</button>
+            </div>
+          </div>
         </h1>
-        <h2 class="subtitle">
-          
-        </h2>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
