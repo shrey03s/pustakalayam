@@ -21,15 +21,15 @@ class VisitorsRecordModel extends ExtendedModel
     protected $useSoftDeletes = false;
 
     protected $validationRules    = [
-        'mem_id'    => 'required|greater_than[0]|numeric',
+        'mem_id'    => 'required|min_length[1]|max_length[100]|string',
         'name'      => 'required|min_length[1]|max_length[100]|string',
         'phone'     => 'required|min_length[1]|max_length[20]|string',
         'email'     => 'required|max_length[255]|valid_email',
-        'address'   => 'required|max_length[255]|string',
-        'city'      => 'required|max_length[100]|string',
-        'state'     => 'required|max_length[100]|string',
-        'country'   => 'required|max_length[100]|string',
-        'pin'       => 'required|max_length[10]|alpha_numeric',
+        'address'   => 'permit_empty|max_length[255]|string',
+        'city'      => 'permit_empty|max_length[100]|string',
+        'state'     => 'permit_empty|max_length[100]|string',
+        'country'   => 'permit_empty|max_length[100]|string',
+        'pin'       => 'permit_empty|max_length[10]|alpha_numeric',
         'prof'      => 'required|min_length[1]|max_length[100]|string',
         'desg'      => 'required|min_length[1]|max_length[100]|string',
         'corp'      => 'required|min_length[1]|max_length[100]|string',
@@ -53,7 +53,7 @@ class VisitorsRecordModel extends ExtendedModel
     protected $orderTableFields     = ['name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp', 'time_in', 'time_out',  'charge'];
     protected $editableFields = [
-        'mem_id'    => 'int',
+        'mem_id'    => 'string',
         'name'      => 'string',
         'phone'     => 'string',
         'email'     => 'string',
@@ -75,6 +75,7 @@ class VisitorsRecordModel extends ExtendedModel
     protected $sumableFields = ['charge'];
         
     protected $exportFields = [
+        'MID'           => ['field' => 'mem_id', 'type' => 'string'],
         'Name'          => ['field' => 'name', 'type' => 'string'],
         'Phone'         => ['field' => 'phone', 'type' => 'string'],
         'Email'         => ['field' => 'email', 'type' => 'string'],

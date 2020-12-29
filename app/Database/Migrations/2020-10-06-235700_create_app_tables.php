@@ -106,6 +106,7 @@ class CreateAppTables extends Migration
             'charge'        => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
             'paid'          => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
             'remain'        => ['type' => 'DECIMAL(5,2) AS (`charge`-`paid`) VIRTUAL', 'null' => true],
+            'is_paid'       => ['type' => 'BOOLEAN AS (`charge` = `paid`) VIRTUAL', 'null' => true],
             'created_at'    => ['type' => 'datetime', 'null' => true],
             'updated_at'    => ['type' => 'datetime', 'null' => true]
         ]);
@@ -117,6 +118,7 @@ class CreateAppTables extends Migration
         $this->forge->addField([
             'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'renew_id'      => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'null' => true],
+            'renewed'       => ['type' => 'BOOLEAN AS (`renew_id` IS NOT NULL) VIRTUAL', 'null' => true],
             'mem_id'        => ['type' => 'VARCHAR', 'constraint' => 100],
             'book_id'       => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'fine_rate'     => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
@@ -127,6 +129,7 @@ class CreateAppTables extends Migration
             'fine'          => ['type' => 'DECIMAL(5,2) AS (DATEDIFF(`aret_date`,`eret_date`)*`fine_rate`+`addfine`) VIRTUAL', 'null' => true],
             'paid'          => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
             'remain'        => ['type' => 'DECIMAL(5,2) AS (`fine`-`paid`) VIRTUAL', 'null' => true],
+            'is_paid'       => ['type' => 'BOOLEAN AS (`fine` = `paid`) VIRTUAL', 'null' => true],
             'created_at'    => ['type' => 'datetime', 'null' => true],
             'updated_at'    => ['type' => 'datetime', 'null' => true]
         ]);
@@ -136,10 +139,10 @@ class CreateAppTables extends Migration
         $this->forge->createTable('issue_record', true);
         
         // Creating table app_conf
-        $this->forge->addField([
+        /*$this->forge->addField([
             'late_fine'     => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0]
         ]);
-        $this->forge->createTable('app_conf', true);
+        $this->forge->createTable('app_conf', true);*/
     }
     
     public function down()
