@@ -4,7 +4,7 @@
             <i class="fas fa-archive"></i>
         </a>
         <a class="navbar-item" href="/">
-            Mining Company
+            Pustakalayam
         </a>
         
         <a role="button" class="navbar-burger burger" data-target="navbarBasicExample">

@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Mining Website</title>
+        <title>Pustakalayam</title>
         <meta name="description" content="The small framework with powerful features">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?= link_tag(base_url("/favicon.ico"), 'shortcut icon', 'image/ico'); ?>

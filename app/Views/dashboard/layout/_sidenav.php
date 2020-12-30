@@ -4,9 +4,9 @@
             General
         </p>
         <ul class="menu-list">
-            <li><a id="sidenav-dashboard-stats" href="/"><i class="fas fa-user"></i><span class="px-2">Dashboard</span></a></li>
+            <li><a id="sidenav-dashboard-stats" href="/"><i class="fas fa-th-large"></i><span class="px-2">Dashboard</span></a></li>
         </ul>
-        <ul class="menu-list">
+        <!--ul class="menu-list">
             <details id="sidenav-sub-report">
                 <summary class="no-select">Report</summary>
                 <ul>
@@ -16,7 +16,7 @@
                     <li><a id="sidenav-depot-stats" href="/control/depotstat"><i class="fas fa-box"></i><span class="px-2">Depot</a></li>
                 </ul>
             </details>
-        </ul>
+        </ul-->
         <ul class="menu-list">
             <details id="sidenav-sub-books">
                 <summary class="no-select">Books</summary>
