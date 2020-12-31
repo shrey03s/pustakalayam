@@ -3,7 +3,10 @@
         <div class="columns">
             <div class="px-6 column is-half">
                 <ul style="list-style-type:none;">
-                    <li>Phone: +1000</li>
+                    <li>Shrey Shrivstava</li>
+                    <li>USN- 1AM18CS155</li>
+                    <li>Rajnish Kumar</li>
+                    <li>USN- 1AM18CS137</li>
                     <li>Email: <a class="">email@mail.coom</a></li>
                     <li>Address: Your Address</li>
                 </ul>  

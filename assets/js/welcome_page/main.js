@@ -25,5 +25,10 @@ function addBooks(book) {
     child.append(cardelm);
     cont.append(child);
     
-    
+    return child;
 }
+
+addBooks({img:'/assets/img/Arduino.jpg',title:'Arduino', subtitle:'Markwoa'});
+addBooks({img:'/assets/img/python03.jpg',title:'Python 3', subtitle:'Mark Da vinci'});
+addBooks({img:'/assets/img/Realestate.jpg',title:'Millionaire real estate', subtitle:'Gary Keller'});
+addBooks({img:'/assets/img/pythonDS.jpg',title:'Python DS', subtitle:'Guido V Russom'});
