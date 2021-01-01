@@ -150,6 +150,11 @@ function toogleDisable(elms) {
     });
 }
 
+function updateFileName(fileelm) {
+    var textelm = $(fileelm).parent().find('span[class=file-name]');
+    textelm.text(fileelm.files[0].name);
+}
+
 // Only for payroll
 function fillLastPaymentDate(modal) {
     var id = $('#payroll-create-employeeid').val();

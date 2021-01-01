@@ -13,16 +13,16 @@ class BooksModel extends ExtendedModel
     protected $primaryKey = 'id';
     
     protected $returnType = 'array';
-    protected $availableFields = ['name', 'img', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
+    protected $availableFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
         'charge', 'date', 'amt', 'sec', 'shelf', 'row'];
-    protected $allowedFields = ['name', 'img', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
+    protected $allowedFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
         'charge', 'date', 'amt', 'sec', 'shelf', 'row'];
     protected $useTimestamps = true;
     protected $useSoftDeletes = true;
 
     protected $validationRules    = [
         'name'      => 'required|min_length[1]|max_length[255]|string',
-        'img'       => 'permit_empty|string',
+        'cover'     => 'permit_empty|string',
         'author'    => 'required|min_length[1]|max_length[100]|string',
         'genre'     => 'required|min_length[1]|max_length[100]|string',
         'category'  => 'required|min_length[1]|max_length[100]|string',
@@ -43,14 +43,14 @@ class BooksModel extends ExtendedModel
     ];
     protected $skipValidation       = false;
     
-    protected $searchTableFields    = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
+    protected $searchTableFields    = ['name', 'edition', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
     protected $filterUFields        = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
     protected $filterNFields        = ['price', 'charge'];
     protected $orderTableFields     = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'sec'];
     protected $topResultsFields     = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'sec'];
     protected $editableFields = [
         'name'      => 'string',
-        'img'       => 'string',
+        'cover'     => 'string',
         'author'    => 'string',
         'genre'     => 'string',
         'category'  => 'string',

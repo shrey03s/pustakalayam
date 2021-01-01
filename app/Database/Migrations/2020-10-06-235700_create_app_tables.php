@@ -22,7 +22,7 @@ class CreateAppTables extends Migration
         $this->forge->addField([
             'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'name'          => ['type' => 'VARCHAR', 'constraint' => 255],
-            'img'           => ['type' => 'TEXT', 'null' => true],
+            'cover'         => ['type' => 'TEXT', 'null' => true],
             'author'        => ['type' => 'VARCHAR', 'constraint' => 100],
             'genre'         => ['type' => 'VARCHAR', 'constraint' => 100],
             'category'      => ['type' => 'VARCHAR', 'constraint' => 100],
@@ -166,6 +166,6 @@ class CreateAppTables extends Migration
         $this->forge->dropTable('visitors_record', true);
         $this->forge->dropTable('mem_record', true);
         $this->forge->dropTable('issue_record', true);
-        $this->forge->dropTable('app_conf', true);
+        //$this->forge->dropTable('app_conf', true);
     }
 }

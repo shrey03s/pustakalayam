@@ -226,6 +226,30 @@ function putVariableSelect($elm, $modal_action) { ?>
 <?php 
 }
 
+function putFileUpload($elm,$modal_action) { ?>
+    <div class="field" type="<?= $elm['type'] ?>">
+        <label class="label"><?= $elm['label'] ?><?= isRequired($elm) ?></label>
+        <div class="file has-name is-right is-fullwidth">
+            <label class="file-label">
+                <input class="file-input" type="file" name="<?= $elm['name'] ?>"
+                       accept="image/*" onchange="updateFileName(this);">
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose cover
+                    </span>
+                </span>
+                <span class="file-name">
+                    No file selected
+                </span>
+            </label>
+        </div>
+    </div>
+<?php 
+}
+
 function putTable($elm,$modal_action) { ?>
     <div class="field" type="<?= $elm['type'] ?>">
         <label class="label"><?= $elm['label'] ?></label>
@@ -370,6 +394,9 @@ function modal_producer($modal, $page_action, $modal_title, $modal_action, $moda
                                 break;
                             case 'varsel':
                                 putVariableSelect($elm, $modal_action);
+                                break;
+                            case 'file':
+                                putFileUpload($elm, $modal_action);
                                 break;
                             case 'table':
                                 putTable($elm, $modal_action);
