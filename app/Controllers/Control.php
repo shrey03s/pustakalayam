@@ -21,11 +21,18 @@ class Control extends BaseController
     public function books($action = 'none') 
     {
         $data['action'] = $action;
-        $data['page']   = new \App\Pages\MiningRecord();
+        $data['page']   = new \App\Pages\Books();
         return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     
     public function issue($action = 'none') 
+    {
+        $data['action'] = $action;
+        $data['page']   = new \App\Pages\Depot();
+        return $this->check_and_view('dashboard/layout/_record_page', $data);
+    }
+    
+    public function visitors($action = 'none') 
     {
         $data['action'] = $action;
         $data['page']   = new \App\Pages\Depot();
