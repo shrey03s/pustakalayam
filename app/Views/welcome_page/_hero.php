@@ -3,7 +3,6 @@
       <div class="container has-text-centered">
         <h1 class="title">
             <img src="/assets/img/pstk_logo.svg" style="width: auto; height: 20rem;" alt=""><br>
-          <img src="img/logo-text-light.svg" style="width: auto; height: 3rem;" alt=""><br>
           <div class="field has-addons">
             <div class="control is-expanded">
               <input class="input is-rounded" type="search" placeholder="Find your book" name="Search" autofocus="autofocus" onfocus="this.select()" required="">

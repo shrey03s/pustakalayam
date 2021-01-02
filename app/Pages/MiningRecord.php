@@ -7,7 +7,7 @@
  */
 class MiningRecord 
 {
-    public $tabletitle = "Mining Manager";
+    public $tabletitle = "Books";
     public $pageclass = "mining";
     public $pagesection = "mining";
     public $model = "mining";
@@ -30,8 +30,8 @@ class MiningRecord
     ];
     public $orderfields = [
         'Date'          => ['field' => 'date', 'selected' => true],
-        'Vehicle'       => ['field' => 'vehicle.vin'],
-        'Mine'          => ['field' => 'mine.name'],
+        'Auth'          => ['field' => 'vehicle.vin'],
+        'Edition'       => ['field' => 'mine.name'],
         'Depot'         => ['field' => 'depot.name'],
         'Amount'        => ['field' => 'amount'],
         'Rate'          => ['field' => 'rate'],

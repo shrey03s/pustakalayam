@@ -56,10 +56,10 @@
     
     <div class="level-right">
         <?php if(!isset($page->showexportcsv) || $page->showexportcsv == true) { ?>
-        <a class="button is-small-mobile is-fullwidth is-info mb-2 ml-3-non-mobile" onclick="exportCSV()">Export CSV</a>
+        <!--<a class="button is-small-mobile is-fullwidth is-info mb-2 ml-3-non-mobile" onclick="exportCSV()">Export CSV</a>-->
         <?php }?>
         <?php if(isset($page->modals['create'])) { ?>
-        <a class="button is-small-mobile is-fullwidth is-success mb-2 ml-3-non-mobile" onclick="showCreateModal()">Create &plus;</a>
+        <a class="button is-small-mobile is-fullwidth is-success mb-2 ml-3-non-mobile" onclick="showCreateModal()">Add books &plus;</a>
         <?php }?>
     </div>
 </div>

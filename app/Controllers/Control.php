@@ -58,4 +58,8 @@ class Control extends BaseController
         $data['action'] = $action;
         return $this->check_and_view('dashboard/profile/page', $data);
     }
+    
+    public function test() {
+        
+    }
 }
