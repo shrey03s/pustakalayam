@@ -31,7 +31,6 @@ class CreateAppTables extends Migration
             'publ'          => ['type' => 'VARCHAR', 'constraint' => 100, 'null' => true],
             'desc'          => ['type' => 'TEXT', 'null' => true],
             'price'         => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
-            'charge'        => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
             'date'          => ['type' => 'DATE', 'null' => true],
             'amt'           => ['type' => 'INT', 'constraint' => 4, 'unsigned' => true],
             'sec'           => ['type' => 'VARCHAR', 'constraint' => 100],

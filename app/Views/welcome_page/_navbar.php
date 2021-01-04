@@ -2,7 +2,7 @@
 
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation" >
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
+    <a class="navbar-item" href="/">
         <img src="/assets/img/pstk_logo.svg" style="width: 50px;height: 1.75rem">
     </a>
 
@@ -39,9 +39,9 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <!--a class="button is-primary">
             <strong>Sign up</strong>
-          </a>
+          </a-->
             <a class="button is-light" href="/login">
             Log in
           </a>

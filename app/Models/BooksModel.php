@@ -14,9 +14,9 @@ class BooksModel extends ExtendedModel
     
     protected $returnType = 'array';
     protected $availableFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
-        'charge', 'date', 'amt', 'sec', 'shelf', 'row'];
+        'date', 'amt', 'sec', 'shelf', 'row'];
     protected $allowedFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
-        'charge', 'date', 'amt', 'sec', 'shelf', 'row'];
+        'date', 'amt', 'sec', 'shelf', 'row'];
     protected $useTimestamps = true;
     protected $useSoftDeletes = true;
 
@@ -31,7 +31,6 @@ class BooksModel extends ExtendedModel
         'publ'      => 'permit_empty|min_length[1]|max_length[100]|string',
         'desc'      => 'permit_empty|string',
         'price'     => 'required|decimal',
-        'charge'    => 'required|decimal',
         'date'      => 'required|valid_date',
         'amt'       => 'required|numeric',
         'sec'       => 'required|min_length[1]|max_length[100]|string',
@@ -45,7 +44,7 @@ class BooksModel extends ExtendedModel
     
     protected $searchTableFields    = ['name', 'edition', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
     protected $filterUFields        = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
-    protected $filterNFields        = ['price', 'charge'];
+    protected $filterNFields        = ['price'];
     protected $orderTableFields     = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'sec'];
     protected $topResultsFields     = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'sec'];
     protected $editableFields = [
@@ -59,7 +58,6 @@ class BooksModel extends ExtendedModel
         'publ'      => 'string',
         'desc'      => 'string',
         'price'     => 'decimal',
-        'charge'    => 'decimal',
         'date'      => 'date',
         'amt'       => 'int',
         'sec'       => 'string',

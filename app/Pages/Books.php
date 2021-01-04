@@ -65,14 +65,82 @@ class Books
                 ],
                 [
                     'type'  => 'file',
-                    'name'  => 'type',
-                    'label' => 'Cover',
+                    'name'  => 'cover',
+                    'label' => 'Cover'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'author',
+                    'label' => 'Author',
                     'required'  => true
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'genre',
+                    'label' => 'Genre',
+                    'required'  => true
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'category',
+                    'label' => 'Category',
+                    'required'  => true
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'edition',
+                    'label' => 'Edition'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'isbn',
+                    'label' => 'ISBN'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'publ',
+                    'label' => 'Publication'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'desc',
+                    'label' => 'Description'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'price',
+                    'label' => 'Price',
+                    'value' => 0.0
                 ],
                 [
                     'type'  => 'date',
                     'name'  => 'date',
                     'label' => 'Date of Purchase'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'amt',
+                    'label' => 'No of Copies',
+                    'value' => 1,
+                    'required' => true
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'sec',
+                    'label' => 'Section',
+                    'required' => true
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'shelf',
+                    'label' => 'shelf',
+                    'required' => true
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'row',
+                    'label' => 'Row',
+                    'required' => true
                 ]
             ]
         ],
@@ -83,40 +151,159 @@ class Books
             'elms'  => [
                 [
                     'type'  => 'text',
-                    'name'  => 'vin',
-                    'label' => 'Vehicle ID Number (VIN)',
+                    'name'  => 'name',
+                    'label' => 'Name',
                     'required'  => true,
-                    'fill'  => 'vin'
+                    'fill'  => 'name'
+                ],
+                [
+                    'type'  => 'file',
+                    'name'  => 'cover',
+                    'label' => 'Cover'
                 ],
                 [
                     'type'  => 'text',
-                    'name'  => 'type',
-                    'label' => 'Vehicle Type',
+                    'name'  => 'author',
+                    'label' => 'Author',
                     'required'  => true,
-                    'fill'  => 'type'
+                    'fill'  => 'author'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'genre',
+                    'label' => 'Genre',
+                    'required'  => true,
+                    'fill'  => 'genre'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'category',
+                    'label' => 'Category',
+                    'required'  => true,
+                    'fill'  => 'category'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'edition',
+                    'label' => 'Edition',
+                    'fill'  => 'edition'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'isbn',
+                    'label' => 'ISBN',
+                    'fill'  => 'isbn'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'publ',
+                    'label' => 'Publication',
+                    'fill'  => 'publ'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'desc',
+                    'label' => 'Description',
+                    'fill'  => 'desc'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'price',
+                    'label' => 'Price',
+                    'value' => 0.0,
+                    'fill'  => 'price'
                 ],
                 [
                     'type'  => 'date',
                     'name'  => 'date',
                     'label' => 'Date of Purchase',
                     'fill'  => 'date'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'amt',
+                    'label' => 'No of Copies',
+                    'value' => 1,
+                    'required' => true,
+                    'fill'  => 'amt'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'sec',
+                    'label' => 'Section',
+                    'required' => true,
+                    'fill'  => 'sec'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'shelf',
+                    'label' => 'shelf',
+                    'required' => true,
+                    'fill'  => 'shelf'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'row',
+                    'label' => 'Row',
+                    'required' => true,
+                    'fill'  => 'row'
                 ]
             ]
         ],
         'filter' => [
-            'title' => 'Filter Vehicles',
+            'title' => 'Filter Books',
             'action_button' => 'Filter',
             'close_button' => 'Cancel',
             'elms' => [
                 [
                     'type'  => 'text',
-                    'name'  => 'vin',
-                    'label' => 'Vehicle ID Number (VIN)'
+                    'name'  => 'name',
+                    'label' => 'Name'
                 ],
                 [
                     'type'  => 'text',
-                    'name'  => 'type',
-                    'label' => 'Vehicle Type'
+                    'name'  => 'author',
+                    'label' => 'Author'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'genre',
+                    'label' => 'Genre'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'category',
+                    'label' => 'Category'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'edition',
+                    'label' => 'Edition'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'isbn',
+                    'label' => 'ISBN'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'publ',
+                    'label' => 'Publication'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'desc',
+                    'label' => 'Description'
+                ],
+                [
+                    'type'  => 'number',
+                    'name'  => 'price',
+                    'label' => 'Price'
+                ],
+                [
+                    'type'  => 'text',
+                    'name'  => 'sec',
+                    'label' => 'Section'
                 ]
             ]
         ],
