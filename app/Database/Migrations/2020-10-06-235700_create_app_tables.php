@@ -94,7 +94,7 @@ class CreateAppTables extends Migration
             'updated_at'    => ['type' => 'datetime', 'null' => true]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('mem_id', 'members', 'id', 'CASCADE', 'SET NULL');
+        $this->forge->addForeignKey('mem_id', 'members', 'id', 'CASCADE', false);
         $this->forge->createTable('visitors_record', true);
         
         // Creating table mem_record

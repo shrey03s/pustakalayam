@@ -19,7 +19,7 @@ class Members
     public $deleteentry = '/api/delete';
     
     public $tablefields = [
-        'ID'             => ['id' => 'text'],
+        'ID'             => ['uid' => 'text'],
         'Name'           => ['name' => 'text'],
         'Phone'          => ['phone' => 'text'],
         'Email'          => ['email' => 'text'],
@@ -28,7 +28,7 @@ class Members
         'State'          => ['state' => 'text']
     ];
     public $orderfields = [
-        'ID'             => ['field' => 'id', 'selected' => true],
+        'ID'             => ['field' => 'uid', 'selected' => true],
         'Name'           => ['field' => 'name'],
         'Phone'          => ['field' => 'phone'],
         'Email'          => ['field' => 'email'],
@@ -37,7 +37,7 @@ class Members
         'State'          => ['field' => 'state']
     ];
     public $searchfields = [
-        'ID'             => 'id',
+        'ID'             => 'uid',
         'Name'           => 'name',
         'Phone'          => 'phone',
         'Email'          => 'email',
@@ -56,7 +56,7 @@ class Members
             'elms'  => [
                 [
                     'type'  => 'text',
-                    'name'  => 'id',
+                    'name'  => 'uid',
                     'label' => 'ID',
                     'required'  => true
                 ],
@@ -113,7 +113,7 @@ class Members
             'elms'  => [
                 [
                     'type'  => 'text',
-                    'name'  => 'id',
+                    'name'  => 'uid',
                     'label' => 'ID',
                     'required'  => true,
                     'fill'  => 'id'
@@ -184,7 +184,7 @@ class Members
             'elms' => [
                 [
                     'type'  => 'text',
-                    'name'  => 'id',
+                    'name'  => 'uid',
                     'label' => 'ID'
                 ],
                 [
@@ -231,7 +231,7 @@ class Members
             'action_button' => null,
             'close_button'  => 'Close',
             'elms'  => [
-                'ID'                => ['field' => 'id', 'type' => 'text'],
+                'UID'               => ['field' => 'uid', 'type' => 'text'],
                 'Name'              => ['field' => 'name', 'type' => 'text'],
                 'Phone'             => ['field' => 'phone', 'type' => 'text'],
                 'Email'             => ['field' => 'email', 'type' => 'text'],

@@ -190,10 +190,36 @@ class IssueRecord
             'close_button'  => 'Close',
             'elms'  => [
                 'Member'            => [
-                    'head'      => ['field' => 'mem.name', 'type' => 'text']
+                    'head'              => ['field' => 'mem.name', 'type' => 'text'],
+                    'UID'               => ['field' => 'uid', 'type' => 'text'],
+                    'Name'              => ['field' => 'name', 'type' => 'text'],
+                    'Phone'             => ['field' => 'phone', 'type' => 'text'],
+                    'Email'             => ['field' => 'email', 'type' => 'text'],
+                    'Address'           => ['field' => 'address', 'type' => 'text'],
+                    'City'              => ['field' => 'city', 'type' => 'text'],
+                    'State'             => ['field' => 'state', 'type' => 'text'],
+                    'Country'           => ['field' => 'country', 'type' => 'text'],
+                    'Pin'               => ['field' => 'pin', 'type' => 'decimal'],
+                    'Profession'        => ['field' => 'prof', 'type' => 'date'],
+                    'Designation'       => ['field' => 'desg', 'type' => 'text'],
+                    'Corp/Org'          => ['field' => 'corp', 'type' => 'number']
                 ],
                 'Book'              => [
-                    'head'      => ['field' => 'book.name', 'type' => 'text']
+                    'head'              => ['field' => 'book.name', 'type' => 'text'],
+                    'Cover'             => ['field' => 'cover', 'type' => 'img'],
+                    'Name'              => ['field' => 'name', 'type' => 'text'],
+                    'Author'            => ['field' => 'author', 'type' => 'text'],
+                    'Edition'           => ['field' => 'edition', 'type' => 'text'],
+                    'Publication'       => ['field' => 'publ', 'type' => 'text'],
+                    'ISBN'              => ['field' => 'isbn', 'type' => 'text'],
+                    'Genre'             => ['field' => 'genre', 'type' => 'text'],
+                    'Category'          => ['field' => 'category', 'type' => 'text'],
+                    'Price'             => ['field' => 'price', 'type' => 'decimal'],
+                    'Date of Purchase'  => ['field' => 'date', 'type' => 'date'],
+                    'Section'           => ['field' => 'sec', 'type' => 'text'],
+                    'Shelf'             => ['field' => 'shelf', 'type' => 'number'],
+                    'Row'               => ['field' => 'row', 'type' => 'number'],
+                    'Description'       => ['field' => 'desc', 'type' => 'text']
                 ],
                 'Renewed'               => ['field' => 'renewed', 'type' => 'bool'],
                 'Date'                  => ['field' => 'date', 'type' => 'date'],
