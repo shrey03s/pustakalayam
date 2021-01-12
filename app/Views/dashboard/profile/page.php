@@ -11,7 +11,7 @@
 
 <?php 
 function getUserGroup() {
-    foreach (['owner', 'manager', 'worker'] as $value) {
+    foreach (['owner', 'staff'] as $value) {
         if (in_groups($value)) {
             return $value;
         }

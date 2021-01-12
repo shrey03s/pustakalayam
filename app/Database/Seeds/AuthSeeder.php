@@ -13,24 +13,24 @@ class AuthSeeder extends \CodeIgniter\Database\Seeder
         $auth = \Myth\Auth\Config\Services::authorization();
         $users = model('UserModel');
         
-        $attendance_permission_id = $this->check_add_permission($auth, 'app.attendance', 'Allows a user to manage attendance');
-        $salary_permission_id = $this->check_add_permission($auth, 'app.salary', 'Allows a user to manage salary');
+        //$attendance_permission_id = $this->check_add_permission($auth, 'app.attendance', 'Allows a user to manage attendance');
+        //$salary_permission_id = $this->check_add_permission($auth, 'app.salary', 'Allows a user to manage salary');
         $delete_permission_id = $this->check_add_permission($auth, 'app.delete.entry', 'Allows a user to delete entry');
         
         if($auth->group('owner') == NULL) {
-            $grp_id = $auth->createGroup('owner', 'Group of business owners');
-            $auth->addPermissionToGroup($attendance_permission_id, $grp_id);
-            $auth->addPermissionToGroup($salary_permission_id, $grp_id);
+            $grp_id = $auth->createGroup('owner', 'Library HOD/Owner');
+            //$auth->addPermissionToGroup($attendance_permission_id, $grp_id);
+            //$auth->addPermissionToGroup($salary_permission_id, $grp_id);
             $auth->addPermissionToGroup($delete_permission_id, $grp_id);
         }
-        if($auth->group('manager') == NULL) {
-            $grp_id = $auth->createGroup('manager', 'Group of business managers');
-            $auth->addPermissionToGroup($attendance_permission_id, $grp_id);
-            $auth->addPermissionToGroup($salary_permission_id, $grp_id);
-        }
+        if($auth->group('staff') == NULL) {
+            $grp_id = $auth->createGroup('staff', 'Library staff');
+            //$auth->addPermissionToGroup($attendance_permission_id, $grp_id);
+            //$auth->addPermissionToGroup($salary_permission_id, $grp_id);
+        }/*
         if($auth->group('worker') == NULL) {
             $auth->createGroup('worker', 'Group of business workers');
-        }
+        }*/
         
         $usrs = $users->findColumn('username');
         if($usrs == NULL || in_array('owner', $usrs)) {

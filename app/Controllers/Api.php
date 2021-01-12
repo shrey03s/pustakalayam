@@ -247,7 +247,7 @@ class Api extends Controller
         
         if($modifing) {
             $group = $this->request->getPost('groups');
-            $grps = array_diff(['owner', 'manager', 'worker'], [$group]);
+            $grps = array_diff(['owner', 'staff'], [$group]);
             foreach ($grps as $grp) {
                 if($authorize->inGroup($grp, $id)) {
                     $authorize->removeUserFromGroup($id, $grp);

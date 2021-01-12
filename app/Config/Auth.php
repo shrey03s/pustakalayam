@@ -6,7 +6,7 @@ class Auth extends \Myth\Auth\Config\Auth
 {
     public $allowRegistration = false;
     
-    public $defaultUserGroup = 'worker';
+    public $defaultUserGroup = 'staff';
     
     public $allowRemembering = true;
     

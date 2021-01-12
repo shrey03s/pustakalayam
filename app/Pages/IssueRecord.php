@@ -7,7 +7,7 @@
  */
 class IssueRecord 
 {
-    public $tabletitle = "Books Issuing Manager";
+    public $tabletitle = "Books Issuing Record";
     public $pageclass = "issue";
     public $pagesection = "issue";
     public $model = 'issue';

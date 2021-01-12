@@ -53,7 +53,7 @@ class Accounts
                     'type'  => 'sel',
                     'name'  => 'groups',
                     'label' => 'Type',
-                    'value' => ['owner', 'manager', 'worker'],
+                    'value' => ['owner', 'staff'],
                     'required' => true
                 ],
                 [
@@ -95,7 +95,7 @@ class Accounts
                     'type'  => 'sel',
                     'name'  => 'groups',
                     'label' => 'Type',
-                    'value' => ['owner', 'manager', 'worker'],
+                    'value' => ['owner', 'staff'],
                     'fill'  => 'groups'
                 ],
                 [
