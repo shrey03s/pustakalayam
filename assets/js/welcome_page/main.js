@@ -5,6 +5,15 @@
     });
 });*/
 
+function searchBooks(elm) {
+    var data = {
+        text: $(elm).val()
+    };
+    $.post('/search', data, function(data) {
+        console.log(data);
+    });
+}
+
 function addBooks(book) {
     var cont = $('#books-display');
     var child = $('<div>', {class:'flow-child'});
