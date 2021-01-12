@@ -28,7 +28,7 @@ class Control extends BaseController
     public function issue($action = 'none') 
     {
         $data['action'] = $action;
-        $data['page']   = new \App\Pages\Depot();
+        $data['page']   = new \App\Pages\IssueRecord();
         return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     
@@ -49,14 +49,14 @@ class Control extends BaseController
     public function members($action = 'none') 
     {
         $data['action'] = $action;
-        $data['page']   = new \App\Pages\Employees();
+        $data['page']   = new \App\Pages\Members();
         return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     
     public function membership($action = 'none') 
     {
         $data['action'] = $action;
-        $data['page']   = new \App\Pages\Depot();
+        $data['page']   = new \App\Pages\Members();
         return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     

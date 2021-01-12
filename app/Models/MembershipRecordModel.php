@@ -19,7 +19,7 @@ class MembershipRecordModel extends ExtendedModel
     protected $useSoftDeletes = false;
 
     protected $validationRules    = [
-        'mem_id'        => 'required|min_length[1]|max_length[100]|string',
+        'mem_id'        => 'required|numeric',
         'date'          => 'required|valid_date',
         'valid_until'   => 'required|valid_date',
         'charge'        => 'permit_empty|decimal',
@@ -27,17 +27,17 @@ class MembershipRecordModel extends ExtendedModel
     ];
     protected $validationMessages = [
     ];
-    protected $skipValidation     = false;
+    protected $skipValidation       = false;
     
-    protected $searchJsonFields     = ['mem.id', 'mem.name', 'mem.phone', 'mem.email', 'mem.address', 'mem.city', 'mem.state', 'mem.country',
+    protected $searchJsonFields     = ['mem.uid', 'mem.name', 'mem.phone', 'mem.email', 'mem.address', 'mem.city', 'mem.state', 'mem.country',
         'mem.pin', 'mem.prof', 'mem.desg', 'mem.corp'];
     protected $searchBooleanFields  = ['is_paid'];
     protected $filterDFields        = ['mem_id', 'is_paid'];
     protected $filterNFields        = ['date', 'valid_until', 'charge', 'paid', 'remain'];
-    protected $orderJsonFields      = ['mem.id'];
+    protected $orderJsonFields      = ['mem.uid'];
     protected $orderTableFields     = ['date', 'valid_until', 'charge', 'paid', 'remain', 'is_paid'];
     protected $editableFields = [
-        'mem_id'        => 'string',
+        'uid'           => 'string',
         'date'          => 'date',
         'valid_until'   => 'date',
         'charge'        => 'decimal',
@@ -47,9 +47,9 @@ class MembershipRecordModel extends ExtendedModel
         'mem_id'    => 'MembersModel'
     ];
     protected $sumableFields = ['charge', 'paid'];
-        
+    
     protected $exportFields = [
-        'MID'           => ['field' => 'mem_id', 'type' => 'string'],
+        'MID'           => ['field' => 'mem_id', 'type' => 'foreign', 'table' => 'members', 'tablefield' => 'uid'],
         'Date'          => ['field' => 'date', 'type' => 'date'],
         'Valid Util'    => ['field' => 'valid_until', 'type' => 'date'],
         'Charge'        => ['field' => 'charge', 'type' => 'decimal'],

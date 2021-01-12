@@ -7,7 +7,7 @@
  */
 class Books 
 {
-    public $tabletitle = "Books Manager";
+    public $tabletitle = "Books";
     public $pageclass = "books";
     public $pagesection = "books";
     public $model = 'books';

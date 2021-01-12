@@ -30,7 +30,7 @@
             <details id="sidenav-sub-issue">
                 <summary class="no-select">Book Issuing</summary>
                 <ul>
-                    <li><a id="sidenav-books" href="/control/issue"><i class="fas fa-book"></i><span class="px-2">Issuing Record</a></li>
+                    <li><a id="sidenav-issue" href="/control/issue"><i class="fas fa-book"></i><span class="px-2">Issuing Record</a></li>
                     <li><a href="/control/issue/create"><i class="fas fa-plus"></i><span class="px-2">Create Issue Record</a></li>
                 </ul>
             </details>

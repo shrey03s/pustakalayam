@@ -21,7 +21,7 @@ class VisitorsRecordModel extends ExtendedModel
     protected $useSoftDeletes = false;
 
     protected $validationRules    = [
-        'mem_id'    => 'required|min_length[1]|max_length[100]|string',
+        'mem_id'    => 'required|numeric',
         'name'      => 'required|min_length[1]|max_length[100]|string',
         'phone'     => 'required|min_length[1]|max_length[20]|string',
         'email'     => 'required|max_length[255]|valid_email',
@@ -75,7 +75,7 @@ class VisitorsRecordModel extends ExtendedModel
     protected $sumableFields = ['charge'];
         
     protected $exportFields = [
-        'MID'           => ['field' => 'mem_id', 'type' => 'string'],
+        'MID'           => ['field' => 'mem_id', 'type' => 'foreign', 'table' => 'members', 'tablefield' => 'uid'],
         'Name'          => ['field' => 'name', 'type' => 'string'],
         'Phone'         => ['field' => 'phone', 'type' => 'string'],
         'Email'         => ['field' => 'email', 'type' => 'string'],

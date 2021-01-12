@@ -13,15 +13,15 @@ class MembersModel extends ExtendedModel
     protected $primaryKey = 'id';
     
     protected $returnType = 'array';
-    protected $availableFields = ['id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
+    protected $availableFields = ['uid', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
-    protected $allowedFields = ['id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
+    protected $allowedFields = ['uid', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
     protected $useTimestamps = true;
     protected $useSoftDeletes = true;
 
     protected $validationRules    = [
-        'id'        => 'required|min_length[1]|max_length[100]|string',
+        'uid'        => 'required|min_length[1]|max_length[100]|string',
         'name'      => 'required|min_length[1]|max_length[100]|string',
         'phone'     => 'required|min_length[1]|max_length[20]|string',
         'email'     => 'required|max_length[255]|valid_email',
@@ -39,15 +39,15 @@ class MembersModel extends ExtendedModel
     ];
     protected $skipValidation       = false;
     
-    protected $searchTableFields    = ['id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
+    protected $searchTableFields    = ['uid', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
-    protected $filterUFields        = ['id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
+    protected $filterUFields        = ['uid', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
-    protected $orderTableFields     = ['id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
+    protected $orderTableFields     = ['uid', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
     protected $topResultsFields     = ['name'];
     protected $editableFields = [
-        'id'        => 'string',
+        'uid'        => 'string',
         'name'      => 'string',
         'phone'     => 'string',
         'email'     => 'string',
@@ -62,7 +62,7 @@ class MembersModel extends ExtendedModel
     ];
     
     protected $exportFields = [
-        'ID'            => ['field' => 'id', 'type' => 'string'],
+        'UID'           => ['field' => 'uid', 'type' => 'string'],
         'Name'          => ['field' => 'name', 'type' => 'string'],
         'Phone'         => ['field' => 'phone', 'type' => 'string'],
         'Email'         => ['field' => 'email', 'type' => 'string'],

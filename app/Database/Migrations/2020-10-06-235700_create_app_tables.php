@@ -51,7 +51,8 @@ class CreateAppTables extends Migration
         
         // Creating table members
         $this->forge->addField([
-            'id'            => ['type' => 'VARCHAR', 'constraint' => 100],
+            'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
+            'uid'           => ['type' => 'VARCHAR', 'constraint' => 100],
             'name'          => ['type' => 'VARCHAR', 'constraint' => 100],
             'phone'         => ['type' => 'VARCHAR', 'constraint' => 20],
             'email'         => ['type' => 'VARCHAR', 'constraint' => 255],
@@ -68,13 +69,13 @@ class CreateAppTables extends Migration
             'deleted_at'    => ['type' => 'datetime', 'null' => true]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addField("UNIQUE members_id_unique (id, deleted_at)");
+        $this->forge->addField("UNIQUE members_id_unique (id, uid, deleted_at)");
         $this->forge->createTable('members', true);
         
         // Creating table visitors_record
         $this->forge->addField([
             'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
-            'mem_id'        => ['type' => 'VARCHAR', 'constraint' => 100, 'null' => true],
+            'mem_id'        => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'name'          => ['type' => 'VARCHAR', 'constraint' => 100],
             'phone'         => ['type' => 'VARCHAR', 'constraint' => 20],
             'email'         => ['type' => 'VARCHAR', 'constraint' => 255],
@@ -99,7 +100,7 @@ class CreateAppTables extends Migration
         // Creating table mem_record
         $this->forge->addField([
             'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
-            'mem_id'        => ['type' => 'VARCHAR', 'constraint' => 100, 'null' => true],
+            'mem_id'        => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'date'          => ['type' => 'DATE'],
             'valid_until'   => ['type' => 'DATE'],
             'charge'        => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
@@ -118,7 +119,7 @@ class CreateAppTables extends Migration
             'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'renew_id'      => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'null' => true],
             'renewed'       => ['type' => 'BOOLEAN AS (`renew_id` IS NOT NULL) VIRTUAL', 'null' => true],
-            'mem_id'        => ['type' => 'VARCHAR', 'constraint' => 100],
+            'mem_id'        => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'book_id'       => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'fine_rate'     => ['type' => 'DECIMAL', 'constraint' => '5,2', 'default' => 0.0],
             'date'          => ['type' => 'DATE'],
