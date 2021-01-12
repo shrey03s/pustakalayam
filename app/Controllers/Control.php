@@ -56,7 +56,7 @@ class Control extends BaseController
     public function membership($action = 'none') 
     {
         $data['action'] = $action;
-        $data['page']   = new \App\Pages\Members();
+        $data['page']   = new \App\Pages\MembershipRecord();
         return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     

@@ -9,7 +9,7 @@ class Api extends Controller
     private $serv = [
         'accounts'      => 'UserModel',
         'issue'         => 'IssueRecordModel',
-        'memberships'   => 'MembershipRecordModel',
+        'membership'   => 'MembershipRecordModel',
         'books'         => 'BooksModel',
         'members'       => 'MembersModel',
         'visitors'      => 'VisitorsRecordModel'

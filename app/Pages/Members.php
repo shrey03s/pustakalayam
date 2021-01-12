@@ -240,7 +240,7 @@ class Members
                 'State'             => ['field' => 'state', 'type' => 'text'],
                 'Country'           => ['field' => 'country', 'type' => 'text'],
                 'Pin'               => ['field' => 'pin', 'type' => 'decimal'],
-                'Profession'        => ['field' => 'prof', 'type' => 'date'],
+                'Profession'        => ['field' => 'prof', 'type' => 'text'],
                 'Designation'       => ['field' => 'desg', 'type' => 'text'],
                 'Corp/Org'          => ['field' => 'corp', 'type' => 'number']
             ]

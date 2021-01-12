@@ -34,10 +34,10 @@ class MembershipRecordModel extends ExtendedModel
     protected $searchBooleanFields  = ['is_paid'];
     protected $filterDFields        = ['mem_id', 'is_paid'];
     protected $filterNFields        = ['date', 'valid_until', 'charge', 'paid', 'remain'];
-    protected $orderJsonFields      = ['mem.uid'];
+    protected $orderJsonFields      = ['mem.uid', 'mem.name'];
     protected $orderTableFields     = ['date', 'valid_until', 'charge', 'paid', 'remain', 'is_paid'];
     protected $editableFields = [
-        'uid'           => 'string',
+        'mem_id'        => 'int',
         'date'          => 'date',
         'valid_until'   => 'date',
         'charge'        => 'decimal',
@@ -46,7 +46,7 @@ class MembershipRecordModel extends ExtendedModel
     protected $foreignFields = [
         'mem_id'    => 'MembersModel'
     ];
-    protected $sumableFields = ['charge', 'paid'];
+    protected $sumableFields = ['paid'];
     
     protected $exportFields = [
         'MID'           => ['field' => 'mem_id', 'type' => 'foreign', 'table' => 'members', 'tablefield' => 'uid'],
