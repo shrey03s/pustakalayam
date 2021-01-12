@@ -45,6 +45,12 @@ function formatDate(value) {
     return pad(date.getDate(),2)+'-'+pad(date.getMonth()+1,2)+'-'+date.getFullYear();
 }
 
+function formatDateTime(value) {
+    var date = new Date(value);
+    return pad(date.getDate(),2)+'-'+pad(date.getMonth()+1,2)+'-'+date.getFullYear()
+            +' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
+}
+
 function datediff(a, b) {
     var da = ($(a).val())?new Date($(a).val()):new Date();
     var db = ($(b).val())?new Date($(b).val()):new Date();

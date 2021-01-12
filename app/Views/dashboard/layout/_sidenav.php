@@ -45,6 +45,15 @@
                 </ul>
             </details>
         </ul>
+        <ul class="menu-list">
+            <details id="sidenav-sub-visitors">
+                <summary class="no-select">Visitors</summary>
+                <ul>
+                    <li><a id="sidenav-visitors" href="/control/visitors"><i class="fa fa-user"></i><span class="px-2">Visitors</span></a></li>
+                    <li><a href="/control/visitors/create"><i class="fa fa-plus"></i><span class="px-2">Add Visitors</span></a></li>
+                </ul>
+            </details>
+        </ul>
         <?php if(has_permission('app.delete.entry')) { ?>
         <p class="menu-label  mx-2 has-text-light">
             Administration

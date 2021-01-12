@@ -76,6 +76,7 @@ class CreateAppTables extends Migration
         $this->forge->addField([
             'id'            => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'mem_id'        => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
+            'book_id'       => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'name'          => ['type' => 'VARCHAR', 'constraint' => 100],
             'phone'         => ['type' => 'VARCHAR', 'constraint' => 20],
             'email'         => ['type' => 'VARCHAR', 'constraint' => 255],
@@ -95,6 +96,7 @@ class CreateAppTables extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('mem_id', 'members', 'id', 'CASCADE', false);
+        $this->forge->addForeignKey('book_id', 'books', 'id', 'CASCADE', false);
         $this->forge->createTable('visitors_record', true);
         
         // Creating table mem_record

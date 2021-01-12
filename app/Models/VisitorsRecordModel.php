@@ -13,15 +13,16 @@ class VisitorsRecordModel extends ExtendedModel
     protected $primaryKey = 'id';
     
     protected $returnType = 'array';
-    protected $availableFields =['mem_id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 
+    protected $availableFields =['mem_id', 'book_id','name', 'phone', 'email', 'address', 'city', 'state', 'country', 
         'pin', 'prof', 'desg', 'corp', 'time_in', 'time_out',  'charge'];
-    protected $allowedFields = ['mem_id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 
+    protected $allowedFields = ['mem_id', 'book_id', 'name', 'phone', 'email', 'address', 'city', 'state', 'country', 
         'pin', 'prof', 'desg', 'corp', 'time_in', 'time_out', 'charge'];
     protected $useTimestamps = true;
     protected $useSoftDeletes = false;
 
     protected $validationRules    = [
         'mem_id'    => 'required|numeric',
+        'book_id'   => 'required|numeric',
         'name'      => 'required|min_length[1]|max_length[100]|string',
         'phone'     => 'required|min_length[1]|max_length[20]|string',
         'email'     => 'required|max_length[255]|valid_email',
@@ -42,18 +43,20 @@ class VisitorsRecordModel extends ExtendedModel
     protected $skipValidation     = false;
     
     protected $searchJsonFields     = ['mem.id', 'mem.name', 'mem.phone', 'mem.email', 'mem.address', 'mem.city', 'mem.state', 'mem.country',
-        'mem.pin', 'mem.prof', 'mem.desg', 'mem.corp'];
+        'mem.pin', 'mem.prof', 'mem.desg', 'mem.corp', 'book.name', 'book.edition', 'book.author', 'book.genre', 
+        'book.category', 'book.isbn', 'book.publ', 'book.desc', 'book.sec'];
     protected $searchTableFields    = ['name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
-    protected $filterDFields        = ['mem_id'];
+    protected $filterDFields        = ['mem_id', 'book_id'];
     protected $filterNFields        = ['time_in', 'time_out', 'charge'];
     protected $filterUFields        = ['name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp'];
-    protected $orderJsonFields      = ['mem.id'];
+    protected $orderJsonFields      = ['mem.uid', 'book.name'];
     protected $orderTableFields     = ['name', 'phone', 'email', 'address', 'city', 'state', 'country', 'pin', 'prof',
         'desg', 'corp', 'time_in', 'time_out',  'charge'];
     protected $editableFields = [
-        'mem_id'    => 'string',
+        'mem_id'    => 'int',
+        'book_id'   => 'int',
         'name'      => 'string',
         'phone'     => 'string',
         'email'     => 'string',
@@ -70,12 +73,14 @@ class VisitorsRecordModel extends ExtendedModel
         'charge'    => 'decimal'
     ];
     protected $foreignFields = [
-        'mem_id'    => 'MembersModel'
+        'mem_id'    => 'MembersModel',
+        'book_id'   => 'BooksModel'
     ];
     protected $sumableFields = ['charge'];
         
     protected $exportFields = [
         'MID'           => ['field' => 'mem_id', 'type' => 'foreign', 'table' => 'members', 'tablefield' => 'uid'],
+        'Book'          => ['field' => 'book_id', 'type' => 'foreign', 'table' => 'books', 'tablefield' => 'name'],
         'Name'          => ['field' => 'name', 'type' => 'string'],
         'Phone'         => ['field' => 'phone', 'type' => 'string'],
         'Email'         => ['field' => 'email', 'type' => 'string'],

@@ -15,6 +15,8 @@ function getElmForType(value, type) {
             return (+value).toFixed(2);
         case 'date':
             return (value !== null && !value.startsWith('0000-00-00')) ? formatDate(value): 'NA';
+        case 'datetime':
+            return (value !== null && !value.startsWith('0000-00-00')) ? formatDateTime(value): 'NA';
         default: return value;
     }
 }

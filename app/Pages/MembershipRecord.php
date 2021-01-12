@@ -7,7 +7,7 @@
  */
 class MembershipRecord 
 {
-    public $tabletitle = "Membership Manager";
+    public $tabletitle = "Membership Record";
     public $pageclass = "membership";
     public $pagesection = "membership";
     public $model = 'membership';

@@ -117,6 +117,16 @@ function putDate($elm, $modal_action) { ?>
 <?php 
 }
 
+function putDateTime($elm, $modal_action) { ?>
+    <div class="field" type="<?= $elm['type'] ?>" id="<?= $modal_action ?>-<?= $elm['name'] ?>-date">
+        <label class="label"><?= $elm['label'] ?><?= isRequired($elm) ?></label>
+        <input type="datetime-local" class="input" name="<?= $elm['name'] ?>" <?= addFillAttr($elm) ?> <?= addExtAttrs($elm) ?> <?= addAttr($elm, 'disabled') ?>
+               <?= addAttr($elm, 'id') ?> <?= (isset($elm['filldate']) && !$elm['filldate'])?'filldate="false"':'' ?> <?= addAttr($elm, 'onchange') ?>
+               <?= (isset($elm['required']) && $elm['required'])?'required':'' ?> <?= addAttr($elm, 'readonly') ?>>
+     </div>
+<?php 
+}
+
 function putCoal($elm) { ?>
     <div class="field" type="<?= $elm['type'] ?>">
         <label class="label"><?= $elm['label'] ?><?= isRequired($elm) ?></label>
@@ -391,6 +401,8 @@ function modal_producer($modal, $page_action, $modal_title, $modal_action, $moda
                                 break;
                             case 'date':
                                 putDate($elm, $modal_action);
+                            case 'datetime':
+                                putDateTime($elm, $modal_action);
                                 break;
                             case 'varsel':
                                 putVariableSelect($elm, $modal_action);

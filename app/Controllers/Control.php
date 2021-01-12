@@ -35,7 +35,7 @@ class Control extends BaseController
     public function visitors($action = 'none') 
     {
         $data['action'] = $action;
-        $data['page']   = new \App\Pages\Depot();
+        $data['page']   = new \App\Pages\VisitorsRecord();
         return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     
