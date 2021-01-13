@@ -196,6 +196,10 @@ function fillDetailsModal(elm) {
             }
         } else if (data !== undefined && data !== null && $(e).is('div[filltype=date]')) {
             $(e).text(data.startsWith('0000-00-00')? 'NA': formatDate(data));
+        } else if (data !== undefined && data !== null && $(e).is('div[filltype=img]')) {
+            /*var felm = $('<figure>', {class:'image is-96x96'});
+            felm.append($('<img>', {src: data}));
+            $(e).append(felm);*/
         } else if (typeof data === 'string' && data !== undefined && data !== null) {
             $(e).text((!isNaN(parseFloat(data)) && data.includes('.')) ? (+data).toFixed(2) : data);
         } else if (typeof data === 'number' && data !== null) {

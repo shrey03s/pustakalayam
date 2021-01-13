@@ -241,7 +241,7 @@ function putFileUpload($elm,$modal_action) { ?>
         <label class="label"><?= $elm['label'] ?><?= isRequired($elm) ?></label>
         <div class="file has-name is-right is-fullwidth">
             <label class="file-label">
-                <input class="file-input" type="file" name="<?= $elm['name'] ?>"
+                <input class="file-input" type="file" name="<?= $elm['name'] ?>" tourl="<?= $elm['url'] ?>"
                        accept="image/*" onchange="updateFileName(this);">
                 <span class="file-cta">
                     <span class="file-icon">
@@ -401,6 +401,7 @@ function modal_producer($modal, $page_action, $modal_title, $modal_action, $moda
                                 break;
                             case 'date':
                                 putDate($elm, $modal_action);
+                                break;
                             case 'datetime':
                                 putDateTime($elm, $modal_action);
                                 break;

@@ -7,6 +7,10 @@
                     <li>USN- 1AM18CS155</li>
                     <li>Rajnish Kumar</li>
                     <li>USN- 1AM18CS137</li>
+                    <li>Ekant</li>
+                    <li>USN- 1AM18CS055</li>
+                    <li>Abhishek Raj</li>
+                    <li>USN- 1AM18CS004</li>
                     <li>Email: <a class="">email@mail.coom</a></li>
                     <li>Address: Your Address</li>
                 </ul>  

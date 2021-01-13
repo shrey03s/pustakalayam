@@ -3,9 +3,9 @@
         <p class="menu-label mx-2 has-text-light">
             General
         </p>
-        <ul class="menu-list">
+        <!--ul class="menu-list">
             <li><a id="sidenav-dashboard-stats" href="/"><i class="fas fa-th-large"></i><span class="px-2">Dashboard</span></a></li>
-        </ul>
+        </ul-->
         <!--ul class="menu-list">
             <details id="sidenav-sub-report">
                 <summary class="no-select">Report</summary>

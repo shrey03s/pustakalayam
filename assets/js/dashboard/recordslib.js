@@ -17,6 +17,10 @@ function getElmForType(value, type) {
             return (value !== null && !value.startsWith('0000-00-00')) ? formatDate(value): 'NA';
         case 'datetime':
             return (value !== null && !value.startsWith('0000-00-00')) ? formatDateTime(value): 'NA';
+        case 'img':
+            var felm = $('<figure>', {class:'image is-96x96 is-4by5'});
+            felm.append($('<img>', {src: value}));
+            return felm;
         default: return value;
     }
 }
@@ -148,11 +152,39 @@ function addMissingChecks(form, fd){
         if(box.prop('checked') === false) {
             fd.push({name: box.attr('name'), value: 0});
         }
-        /*else {
-            fd.push({name: box.attr('name'), value: 1});
-        }*/
     }
     
+    return fd;
+}
+
+function uploadFiles(url, file, name) {
+    
+}
+
+function resolveFiles(form, fd) {
+    var uploads = $(form).find('input[type=file]');
+    
+    for(i = 0; i < uploads.length; i++) {
+        var upload = $(uploads[i]);
+        var files = (upload[0]).files;
+        var name = upload.attr('name');
+        var tourl = upload.attr('tourl');
+        if (files.length >0 ) {
+            var fdd = new FormData();
+            fdd.append(name, files[0]);
+            $.ajax({
+                url: tourl,
+                data: fdd,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                async: false,
+                success: function(data){
+                    fd.push({name: name, value: data});
+                }
+            });
+        }
+    }
     return fd;
 }
 
@@ -161,6 +193,7 @@ function createEntry(modal, form) {
     
     var fd = form.serializeArray();
     fd = addMissingChecks(form, fd);
+    fd = resolveFiles(form, fd);
     
     fd = fd.filter(function (val) {
         if (typeof val === 'string' && val && !val.startsWith('0000-00-00')) {
@@ -174,7 +207,6 @@ function createEntry(modal, form) {
     });
     
     fd.push({name: 'model', value: form.attr('model')});
-    
     $.post(tableattrs.putentry, fd).done(function(data){
         data = JSON.parse(data);
         if('errors' in data) {
@@ -194,6 +226,7 @@ function editEntry(modal, form) {
     var fd = form.serializeArray();
     
     fd = addMissingChecks(form, fd);
+    fd = resolveFiles(form, fd);
     if (form.attr('model') === 'rent') {
         fd = fd.filter(function (val) {
             if (typeof val !== 'number' && val) {

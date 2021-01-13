@@ -13,9 +13,9 @@ class BooksModel extends ExtendedModel
     protected $primaryKey = 'id';
     
     protected $returnType = 'array';
-    protected $availableFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
+    protected $availableFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'des', 'price',
         'date', 'amt', 'sec', 'shelf', 'row'];
-    protected $allowedFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'desc', 'price',
+    protected $allowedFields = ['name', 'cover', 'author', 'genre', 'category', 'edition', 'isbn', 'publ', 'des', 'price',
         'date', 'amt', 'sec', 'shelf', 'row'];
     protected $useTimestamps = true;
     protected $useSoftDeletes = true;
@@ -29,7 +29,7 @@ class BooksModel extends ExtendedModel
         'edition'   => 'permit_empty|max_length[10]|alpha_numeric',
         'isbn'      => 'permit_empty|max_length[20]|alpha_numeric_punct',
         'publ'      => 'permit_empty|min_length[1]|max_length[100]|string',
-        'desc'      => 'permit_empty|string',
+        'des'       => 'permit_empty|string',
         'price'     => 'required|decimal',
         'date'      => 'required|valid_date',
         'amt'       => 'required|numeric',
@@ -42,8 +42,8 @@ class BooksModel extends ExtendedModel
     ];
     protected $skipValidation       = false;
     
-    protected $searchTableFields    = ['name', 'edition', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
-    protected $filterUFields        = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'desc', 'sec'];
+    protected $searchTableFields    = ['name', 'edition', 'author', 'genre', 'category', 'isbn', 'publ', 'des', 'sec'];
+    protected $filterUFields        = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'des', 'sec'];
     protected $filterNFields        = ['price'];
     protected $orderTableFields     = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'sec'];
     protected $topResultsFields     = ['name', 'author', 'genre', 'category', 'isbn', 'publ', 'sec'];
@@ -56,7 +56,7 @@ class BooksModel extends ExtendedModel
         'edition'   => 'int',
         'isbn'      => 'string',
         'publ'      => 'string',
-        'desc'      => 'string',
+        'des'       => 'string',
         'price'     => 'decimal',
         'date'      => 'date',
         'amt'       => 'int',
@@ -73,7 +73,7 @@ class BooksModel extends ExtendedModel
         'Edition'       => ['field' => 'edition', 'type' => 'string'],
         'ISBN'          => ['field' => 'isbn', 'type' => 'string'],
         'Publication'   => ['field' => 'publ', 'type' => 'string'],
-        'Description'   => ['field' => 'desc', 'type' => 'string'],
+        'Description'   => ['field' => 'des', 'type' => 'string'],
         'Price'         => ['field' => 'price', 'type' => 'decimal'],
         'Date'          => ['field' => 'date', 'type' => 'date'],
         'Copies'        => ['field' => 'amt', 'type' => 'int'],

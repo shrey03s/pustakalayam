@@ -48,7 +48,7 @@ class Books
         'ISBN'           => 'isbn',
         'Genre'          => 'genre',
         'Category'       => 'category',
-        'Description'    => 'desc',
+        'Description'    => 'des',
         'Section'        => 'sec'
     ];
     public $modals = [
@@ -66,7 +66,8 @@ class Books
                 [
                     'type'  => 'file',
                     'name'  => 'cover',
-                    'label' => 'Cover'
+                    'label' => 'Cover',
+                    'url'   => '/api/uploadcover'
                 ],
                 [
                     'type'  => 'text',
@@ -103,7 +104,7 @@ class Books
                 ],
                 [
                     'type'  => 'text',
-                    'name'  => 'desc',
+                    'name'  => 'des',
                     'label' => 'Description'
                 ],
                 [
@@ -202,9 +203,9 @@ class Books
                 ],
                 [
                     'type'  => 'text',
-                    'name'  => 'desc',
+                    'name'  => 'des',
                     'label' => 'Description',
-                    'fill'  => 'desc'
+                    'fill'  => 'des'
                 ],
                 [
                     'type'  => 'number',
@@ -292,7 +293,7 @@ class Books
                 ],
                 [
                     'type'  => 'text',
-                    'name'  => 'desc',
+                    'name'  => 'des',
                     'label' => 'Description'
                 ],
                 [
@@ -325,7 +326,7 @@ class Books
                 'Section'           => ['field' => 'sec', 'type' => 'text'],
                 'Shelf'             => ['field' => 'shelf', 'type' => 'number'],
                 'Row'               => ['field' => 'row', 'type' => 'number'],
-                'Description'       => ['field' => 'desc', 'type' => 'text']
+                'Description'       => ['field' => 'des', 'type' => 'text']
             ]
         ],
         'delete'    => [

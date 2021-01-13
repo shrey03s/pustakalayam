@@ -28,8 +28,8 @@ class Search extends BaseController
     
     public function index()
     {
-        $books = new \App\Models\BooksModel(); //model('BooksModel');
-        $res = $books->getEntries(0, 5, 'name', 'ASC', ['name','author', 'genre', 
+        $books = model('BooksModel');
+        $res = $books->getEntries(0, 20, 'name', 'ASC', ['name','author', 'genre', 
             'category', 'edition', 'isbn', 'publ', 'desc', 'sec'], $this->request->getPost('text'));
         
         if ($res !== null) {

@@ -387,4 +387,14 @@ class Api extends Controller
                 $this->getGetJsonParam('fields'), $this->getGetParams('search'), $this->getGetJsonParam('filters'), $this->getGetParams('fromdate'),
                 $this->getGetParams('todate'));
     }
+    
+    public function uploadcover()
+    {
+        $file = $this->request->getFile('cover');
+        if ($file !== null) {
+            $filename = $file->getRandomName();
+            $file->move('assets/covers', $filename);
+            return '/assets/covers/'. $filename;
+        }
+    }
 }
