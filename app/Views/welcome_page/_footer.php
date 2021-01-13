@@ -2,7 +2,7 @@
     <div class="content">
         <div class="columns">
             <div class="px-6 column is-half">
-                <ul style="list-style-type:none;">
+                <ul style="list-style-type:none;" class="is-size-6">
                     <li>Shrey Shrivstava</li>
                     <li>USN- 1AM18CS155</li>
                     <li>Rajnish Kumar</li>
@@ -14,9 +14,6 @@
                     <li>Email: <a class="">email@mail.coom</a></li>
                     <li>Address: Your Address</li>
                 </ul>  
-            </div>
-            <div class="px-6 column is-half">
-
             </div>
         </div>
         <p class="has-text-centered">
