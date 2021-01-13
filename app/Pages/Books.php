@@ -160,7 +160,8 @@ class Books
                 [
                     'type'  => 'file',
                     'name'  => 'cover',
-                    'label' => 'Cover'
+                    'label' => 'Cover',
+                    'url'   => '/api/uploadcover'
                 ],
                 [
                     'type'  => 'text',

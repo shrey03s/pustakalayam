@@ -3,20 +3,6 @@
         <p class="menu-label mx-2 has-text-light">
             General
         </p>
-        <!--ul class="menu-list">
-            <li><a id="sidenav-dashboard-stats" href="/"><i class="fas fa-th-large"></i><span class="px-2">Dashboard</span></a></li>
-        </ul-->
-        <!--ul class="menu-list">
-            <details id="sidenav-sub-report">
-                <summary class="no-select">Report</summary>
-                <ul>
-                    <li><a id="sidenav-money-stats" href="/control/moneystat"><i class="fas fa-money-bill-wave"></i><span class="px-2">Money</a></li>
-                    <li><a id="sidenav-mining-stats" href="/control/miningstat"><i class="fas fa-hammer"></i><span class="px-2">Mining</a></li>
-                    <li><a id="sidenav-coal-stats" href="/control/coalstat"><i class="fas fa-shopping-bag"></i><span class="px-2">Coal Utility</a></li>
-                    <li><a id="sidenav-depot-stats" href="/control/depotstat"><i class="fas fa-box"></i><span class="px-2">Depot</a></li>
-                </ul>
-            </details>
-        </ul-->
         <ul class="menu-list">
             <details id="sidenav-sub-books">
                 <summary class="no-select">Books</summary>

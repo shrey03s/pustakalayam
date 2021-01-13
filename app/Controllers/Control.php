@@ -14,8 +14,9 @@ class Control extends BaseController
 
     public function index()
     {
-        $data['page']   = new \App\StatsPages\Dashboard();
-        return $this->check_and_view('dashboard/layout/_stats_page', $data);
+        $data['action'] = '';
+        $data['page']   = new \App\Pages\Books();
+        return $this->check_and_view('dashboard/layout/_record_page', $data);
     }
     
     public function books($action = 'none') 
